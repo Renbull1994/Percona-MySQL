@@ -17,8 +17,8 @@ today=$(date +%Y-%m-%d)
 IP=$(curl ident.me)
 
 #路径
-WORKSPACE="/home/mysql/backup/xtrabackup/$HOSTNAME"
-S3="s3://database-forever-backup/$HOSTNAME"
+WORKSPACE=""
+S3=""
 
 # 备份所有数据库 
 backup_all_database(){
