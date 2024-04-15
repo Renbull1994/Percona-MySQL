@@ -98,8 +98,8 @@ help(){
     Usage:
         /bin/bash xtrabackup.sh [options] | [--exclude] Options::
     Options:
-        all [port]   | Backup mysql with port number, ex: /bin/bash xtrabackup.sh all
-        help         | Help document
+        all    | Backup mysql , ex: /bin/bash xtrabackup.sh all
+        help   | Help document
 EOF
 }
 
