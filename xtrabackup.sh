@@ -1,12 +1,12 @@
 #!/bin/bash
 # 定义变量
-MYSQL_USERNAME="dba_sctool"
-MYSQL_PASSWORD="Fs9tm8%f@dM2SVyvNHIN"
+MYSQL_USERNAME=""
+MYSQL_PASSWORD=""
 MYSQL_HOST="localhost"
 MYSQL_PORT="6603"
-MYSQL_DATADIR="/home/mysql_$MYSQL_PORT/data"
-MYSQL_CNF="/home/mysql_$MYSQL_PORT/my.cnf"
-MYSQL_SOCK="/home/mysql_$MYSQL_PORT/mysql.sock"
+MYSQL_DATADIR=""
+MYSQL_CNF=""
+MYSQL_SOCK=""
 
 # Telegram Bot
 API=""
