@@ -2,7 +2,7 @@
 
 ## MySQL
 ```
-curl -sL https://raw.githubusercontent.com/Renbull1994/Percona-MySQL-Install/main/Install.sh >> install.sh
+curl -sL https://raw.githubusercontent.com/Renbull1994/Percona-MySQL-Install/main/Install.sh >> install.sh | chmod +x install.sh
 ```
 
 ```
@@ -16,7 +16,7 @@ Usage:
 
 ## Xtrabackup
 ```
-curl -sL https://raw.githubusercontent.com/Renbull1994/Percona-MySQL-Install/main/xtrabackup.sh >> xtrabackup.sh
+curl -sL https://raw.githubusercontent.com/Renbull1994/Percona-MySQL-Install/main/xtrabackup.sh >> xtrabackup.sh | chmod +x xtrabackup.sh
 ```
 
 ```
