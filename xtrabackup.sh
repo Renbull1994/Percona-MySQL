@@ -1,12 +1,13 @@
 #!/bin/bash
+backup_all_database(){
 # 定义变量
 MYSQL_USERNAME=""
 MYSQL_PASSWORD=""
-MYSQL_HOST="localhost"
-MYSQL_PORT="3306"
+MYSQL_HOST=""
+MYSQL_PORT=$1
 MYSQL_DATADIR=""
-MYSQL_CNF=""
-MYSQL_SOCK=""
+MYSQL_CNF="/etc/my.cnf"
+MYSQL_SOCK="/var/lib/mysql/mysql.sock"
 
 # Telegram Bot
 API=""
@@ -16,12 +17,13 @@ today=$(date +%Y-%m-%d)
 
 IP=$(curl ident.me)
 
+
 #路径
-WORKSPACE=""
+WORKSPACE="/data/myxtrabackup/$HOSTNAME"
 S3=""
 
 # 备份所有数据库 
-backup_all_database(){
+
 echo "
  __   __ _                 _                   _ 
  \ \ / /| |               | |                 | | 
@@ -70,7 +72,9 @@ curl -X POST "https://api.telegram.org/bot$API/sendMessage" -d "chat_id=$CHAT&te
 
 else
 
-/usr/local/bin/aws s3 sync $WORKSPACE $S3
+# AWS S3
+#echo "正在进行AWS S3 同步，同布至 $S3"
+#/usr/local/bin/aws s3 sync $WORKSPACE $S3
 
 
 # 记录脚本结束时间
@@ -98,15 +102,15 @@ help(){
     Usage:
         /bin/bash xtrabackup.sh [options] | [--exclude] Options::
     Options:
-        all    | Backup mysql , ex: /bin/bash xtrabackup.sh all
-        help   | Help document
+        all [port]  | Backup mysql with port number, ex: /bin/bash xtrabackup.sh all 6603 
+        help        | Help document
 EOF
 }
 
 case $1 in
     all)
         # 全库全量备份
-        backup_all_database
+        backup_all_database $2
     ;;
   *)
     help
